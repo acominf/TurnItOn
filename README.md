@@ -1,34 +1,30 @@
-### Objetivo del juego/aplicación
-El objetivo del juego/aplicación es ...
+### Objetivo del juego
+El objetivo del juego ayudar a desarrollar la logica de programación del jugador, por medio de minijuegos en los que se tiene que cumplir alguna meta, diseñando algoritmos.
 
-### Descripción del juego/aplicación
-La descripción del juego/aplicación es ...
+### Descripción del juego
+En los minijuegos, tienes que formar un diagrama de bloques, con los bloques ya definidos, com mecánicas similares a las de Scratch.
 
 ### Clases principales y sus características
-1. Clase 1
-* caracteristica1
-* caracteristica2
-* caracteristica3
+1. Monito
+* Es fragil y de muere de cualquier pequeño golpe
+* Se mueve a una velocidad normal, ya sea hacia adelante o hacia atrás
+* Salta una distancia normal
 
-2. Clase 2
-* caracteristica1
-* caracteristica2
-* caracteristica3
+2. Carrito
+* Es bastante resistente y resiste una gran cantidad de golpes
+* Se mueve a una gran velocidad hacia adelante y hacia atrás
+* Si queda completamente volteado ya no puede avanzar
 
-3. Clase 3
-* caracteristica1
-* caracteristica2
-* caracteristica3
+3. Guerrero
+* Tiene un poco de resistencia, aguanta unos cuantos golpes
+* Se mueve a una velocidad normal, hacia adelante o hacia atrás
+* Puede lanzar ataques que cusan daño
 
-4. Clase 4
-* caracteristica1
-* caracteristica2
-* caracteristica3
+4. Pared
+* Sirve de obstáculo para detener al jugador
+* Aveces puede causar daño si el jugador la toca
+* Aveces puede destruirse o ser movida.
 
-5. Clase 5
-* caracteristica1
-* caracteristica2
-* caracteristica3
 
 ### Diagrama de clases
 ![Diagrama de clases](url-del-diagrama.png)
