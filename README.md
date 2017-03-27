@@ -27,7 +27,7 @@ En los minijuegos, tienes que formar un diagrama de bloques, con los bloques ya 
 
 
 ### Diagrama de clases
-![Diagrama de clases](url-del-diagrama.png)
+![Diagrama de clases](https://github.com/YouKiddingD/Repositorio-prueba/blob/master/imagenes/Turn%20it%20on!.png?raw=true)
 
 ### Autor(es)
 El autor(es) del proyecto son:
