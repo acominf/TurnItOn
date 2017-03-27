@@ -31,8 +31,8 @@ En los minijuegos, tienes que formar un diagrama de bloques, con los bloques ya 
 
 ### Autor(es)
 El autor(es) del proyecto son:
-- Nombre completo del autor 1 (@nombreUsuarioGitHub)
-- Nombre completo del autor 2 (@nombreUsuarioGitHub)
+- José Pablo García Limón (@YoSiSoyBatman)
+- Daniel Omar Torres Carbajal(@YouKiddingD)
 
 ### Materia(s)
 - Programación Orientada a Objetos
