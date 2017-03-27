@@ -30,7 +30,7 @@ En los minijuegos, tienes que formar un diagrama de bloques, con los bloques ya 
 ![Diagrama de clases](https://github.com/YouKiddingD/Repositorio-prueba/blob/master/imagenes/Turn%20it%20on!.png?raw=true)
 
 ### Autores
-El autor(es) del proyecto son:
+Los autores del proyecto son:
 - José Pablo García Limón (@YoSiSoyBatman)
 - Daniel Omar Torres Carbajal(@YouKiddingD)
 
