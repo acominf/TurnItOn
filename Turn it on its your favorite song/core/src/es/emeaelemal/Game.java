@@ -12,14 +12,23 @@ public class Game extends ApplicationAdapter {
 	Texture img;
 	private OrthographicCamera lakitu;
 	private Hayley p1;
+	private Label l[];
+	//boolean grab=false;
 	@Override
 	public void create () {
+		l = new Label [20];
 		batch = new SpriteBatch();
-		//img = new Texture("Hayley.jpg");
 		lakitu = new OrthographicCamera();
-		lakitu.setToOrtho(false,800,600);
+		lakitu.setToOrtho(false,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
 		lakitu.update();
 		p1 = new Hayley(400,300);
+		l[0]= new Label(100,030,"hurt.png",175,45);
+		l[1]= new Label(100,130,"Rabajo.png",175,45);
+		l[2]= new Label(100,230,"Rarriba.png",175,45);
+		l[3]= new Label(100,330,"Rderecha.png",175,45);
+		l[4]= new Label(100,430,"Rizquierda.png",175,45);
+		l[5]= new Label(100,430,"while.png",215,116);
+
 	}
 
 	@Override
@@ -29,14 +38,19 @@ public class Game extends ApplicationAdapter {
 		lakitu.update();
 		batch.setProjectionMatrix(lakitu.combined);
 		batch.begin();
+		boolean grab=false;
+		grab=l[0].render(batch,grab);
+		grab=l[1].render(batch,grab);
+		grab=l[2].render(batch,grab);
+		grab=l[3].render(batch,grab);
+		grab=l[4].render(batch,grab);
+		grab=l[5].render(batch,grab);
 		p1.render(batch);
-		//batch.draw(img, 0, 0);
 		batch.end();
 	}
 
 	@Override
 	public void dispose () {
 		batch.dispose();
-		//img.dispose();
 	}
 }
