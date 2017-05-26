@@ -10,33 +10,46 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.math.Rectangle;
+
+import java.util.ArrayList;
 
 public class Hayley {
+    private Rectangle rect;
     private Animation animacion[];
     private float clock;
     private TextureRegion [][] movimiento;
     private Texture imagen;
     private TextureRegion activo;
     private int speed;
-    int x,y;
+    int x,y,oldx,oldy,nivelactual;
 
-    public Hayley(int x, int y)
+    public Hayley(int x, int y,int nivel)
     {
+        nivelactual=nivel;
+        rect = new Rectangle(x+15,y,70,32);
         imagen = new Texture(Gdx.files.internal("HW.png"));
         this.speed=7;
         this.x=x;
         this.y=y;
+        this.oldx=x;
+        this.oldy=y;
         this.animaciones();
     }
 
-    public void render(final SpriteBatch b)
+    public int render(final SpriteBatch b,ArrayList<Rectangle> r,Pared meta)
     {
+        this.oldx=this.x;
+        this.oldy=this.y;
         moverLados(b);
+        checarColision(r,meta);
+        return nivelactual;
     }
     public void moverDir(final SpriteBatch b,int dir){
         clock+= Gdx.graphics.getDeltaTime();
         activo = (TextureRegion) animacion[dir].getKeyFrame(clock,true);
         b.draw(activo,x,y,100,100);
+        rect.setPosition(x+15,y);
     }
     public void moverLados(final SpriteBatch b){
         int i=-1;
@@ -82,6 +95,21 @@ public class Hayley {
         animacion[3] = new Animation(.1f,movimiento[3]);
         clock=0f;
         activo=(TextureRegion) animacion[0].getKeyFrame(clock,true);
+    }
+
+    public void checarColision(ArrayList<Rectangle> r,Pared meta)
+    {
+        if(this.rect.overlaps(meta.rect))
+        {
+            nivelactual++;
+        }
+        for(Rectangle f:r) {
+                if (this.rect.overlaps(f)) {
+                    this.x = this.oldx;
+                    this.y = this.oldy;
+                    rect.setPosition(oldx+15, oldy);
+                }
+        }
     }
 
 }

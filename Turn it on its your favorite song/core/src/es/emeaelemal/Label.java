@@ -4,11 +4,13 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.Rectangle;
 
 /**
  * Created by Daniel on 5/16/2017.
  */
 public class Label {
+    public Rectangle jeje;
     private int x;
     private int y;
     private Texture skin;
@@ -18,11 +20,12 @@ public class Label {
 
     public Label(int x,int y,String name,int b,int h)
     {
-      this.x=x;
-      this.y=y;
-      this.alto=h;
-      this.ancho=b;
-      skin = new Texture(Gdx.files.internal(name));
+        jeje=new Rectangle(x,y,b,h);
+        this.x=x;
+        this.y=y;
+        this.alto=h;
+        this.ancho=b;
+        skin = new Texture(Gdx.files.internal(name));
     }
 
     public boolean isClicked()
