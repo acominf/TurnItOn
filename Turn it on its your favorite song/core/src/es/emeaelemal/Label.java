@@ -11,15 +11,16 @@ import com.badlogic.gdx.math.Rectangle;
  */
 public class Label {
     public Rectangle jeje;
-    private int x;
-    private int y;
-    private Texture skin;
-    private int alto;
-    private int ancho;
-    private boolean grab;
+    protected int x;
+    protected int y;
+    protected Texture skin;
+    protected int alto;
+    protected int ancho;
+    protected int indice;
 
-    public Label(int x,int y,String name,int b,int h)
+    public Label(int x,int y,String name,int b,int h,int indice)
     {
+        this.indice=indice;
         jeje=new Rectangle(x,y,b,h);
         this.x=x;
         this.y=y;
@@ -35,27 +36,34 @@ public class Label {
 
             if(Gdx.graphics.getHeight()-Gdx.input.getY()>y && Gdx.graphics.getHeight()-Gdx.input.getY()<y+alto && Gdx.input.getX()<x+ancho && Gdx.input.getX()>x)
             {
-                grab=true;
                 return true;
             }
         }
-        grab=false;
         return false;
     }
 
-    public boolean render(final SpriteBatch b,boolean grab)
+    public void render(final SpriteBatch b,boolean grab[],boolean dibujar)
     {
-        if (grab==false)
-            check();
-      b.draw(skin,x,y);
-      return this.grab;
-
+        if(dibujar==true)
+            b.draw(skin,x,y);
+        else {
+            int pls = 0;
+            for (int i = 0; i < grab.length; i++) {
+                if (grab[i] == false || grab[indice] == grab[i]) {
+                } else
+                    pls = 1;
+            }
+            if (pls == 0)
+                grab[indice] = check();
+        }
     }
-    public void check(){
-
-        if (this.isClicked()) {
+    public boolean check(){
+        boolean ret=this.isClicked();
+        if (ret) {
             this.x = Gdx.input.getX()-ancho/2;
             this.y = (Gdx.graphics.getHeight() - Gdx.input.getY())-alto/2;
+            jeje.setPosition(this.x,this.y);
         }
+        return ret;
     }
 }

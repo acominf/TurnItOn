@@ -22,12 +22,15 @@ public class Hayley {
     private Texture imagen;
     private TextureRegion activo;
     private int speed;
-    int x,y,oldx,oldy,nivelactual;
+    int x,y,oldx,oldy,nivelactual,estado,direccion;
+
 
     public Hayley(int x, int y,int nivel)
     {
+        direccion=3;
+        estado=0;
         nivelactual=nivel;
-        rect = new Rectangle(x+15,y,70,32);
+        rect = new Rectangle(x+15,y,60,32);
         imagen = new Texture(Gdx.files.internal("HW.png"));
         this.speed=7;
         this.x=x;
@@ -37,12 +40,13 @@ public class Hayley {
         this.animaciones();
     }
 
-    public int render(final SpriteBatch b,ArrayList<Rectangle> r,Pared meta)
+    public int render(final SpriteBatch b,ArrayList<Rectangle> r,Pared meta,Pared ins,int estado,boolean camind[],Pared exit)
     {
+        this.estado=estado;
         this.oldx=this.x;
         this.oldy=this.y;
         moverLados(b);
-        checarColision(r,meta);
+        checarColision(r,meta,camind,ins,exit);
         return nivelactual;
     }
     public void moverDir(final SpriteBatch b,int dir){
@@ -54,21 +58,25 @@ public class Hayley {
     public void moverLados(final SpriteBatch b){
         int i=-1;
         int inc=speed;
-        if(Gdx.input.isKeyPressed(Input.Keys.LEFT)){
+        if(Gdx.input.isKeyPressed(Input.Keys.LEFT)||estado==1){
             i=3;
             x-=inc;
+            direccion=1;
         }
-        if(Gdx.input.isKeyPressed(Input.Keys.RIGHT)){
+        if(Gdx.input.isKeyPressed(Input.Keys.RIGHT)||estado==3){
             i=1;
             x+=inc;
+            direccion=3;
         }
-        if(Gdx.input.isKeyPressed(Input.Keys.UP)){
+        if(Gdx.input.isKeyPressed(Input.Keys.UP)||estado==2){
             i=0;
             y+=inc;
+            direccion=2;
         }
-        if(Gdx.input.isKeyPressed(Input.Keys.DOWN)){
+        if(Gdx.input.isKeyPressed(Input.Keys.DOWN)||estado==4){
             i=2;
             y-=inc;
+            direccion=4;
         }
         if(i==-1){
             b.draw(activo,x,y,100,100);
@@ -97,17 +105,35 @@ public class Hayley {
         activo=(TextureRegion) animacion[0].getKeyFrame(clock,true);
     }
 
-    public void checarColision(ArrayList<Rectangle> r,Pared meta)
+    public void checarColision(ArrayList<Rectangle> r,Pared meta,boolean camind[],Pared ins,Pared exit)
     {
         if(this.rect.overlaps(meta.rect))
         {
             nivelactual++;
+        }
+        if(nivelactual==10) {
+            if(this.rect.overlaps(meta.rect))
+            {
+                nivelactual++;
+            }
+         else
+            if (this.rect.overlaps(ins.rect)) {
+                nivelactual = 8;
+            } else if (this.rect.overlaps(exit.rect)) {
+                nivelactual = 15;
+            }
         }
         for(Rectangle f:r) {
                 if (this.rect.overlaps(f)) {
                     this.x = this.oldx;
                     this.y = this.oldy;
                     rect.setPosition(oldx+15, oldy);
+                    camind[0]=false;
+                    break;
+                }
+                else
+                {
+                    camind[0]=true;
                 }
         }
     }
