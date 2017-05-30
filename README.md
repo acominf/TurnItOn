@@ -5,25 +5,35 @@ El objetivo del juego ayudar a desarrollar la logica de programación del jugado
 En los niveles, tienes que formar un diagrama de bloques, con los bloques ya definidos, com mecánicas similares a las de Scratch.
 
 ### Clases principales y sus características
-1. Monito
-* Es fragil y de muere de cualquier pequeño golpe
-* Se mueve a una velocidad normal, ya sea hacia adelante o hacia atrás
-* Salta una distancia normal
+1. Hayley
+* Puede explorar cada nivel, moviéndose deacuerdo a las pestañas
+* Se mueve a una velocidad normal, ya sea a la derecha, a la izquierda, hacia arriba o hacia abajo
+* Es el protagonista del juegp
 
-2. Carrito
-* Es bastante resistente y resiste una gran cantidad de golpes
-* Se mueve a una gran velocidad hacia adelante y hacia atrás
-* Si queda completamente volteado ya no puede avanzar
+2. Pestaña condicional
+* Tiene un campo para ponerle una condicion, y un campo para ponerle una accion
+* Se puede mover arrastrándola con el mouse
+* Repite la actividad que represente, mientras se cumpla la condicion
 
-3. Guerrero
-* Tiene un poco de resistencia, aguanta unos cuantos golpes
-* Se mueve a una velocidad normal, hacia adelante o hacia atrás
-* Puede lanzar ataques que cusan daño
+3. Pestaña condicion
+* Representa una condicion dentro del juego, por ejemplo, si el camino esta despejado
+* Comprueba y actualiza constantemente el valor booleano de la condicion que representa
+* Se comunica con la pestaña condicional, diciéndole si la condición se está cumpliendo
 
-4. Pared
-* Sirve de obstáculo para detener al jugador
-* Aveces puede causar daño si el jugador la toca
-* Aveces puede destruirse o ser movida.
+4. Pestaña acción
+* Representa una acción específica sobre el protagonista (Hayley)
+* Le dice a la pestaña condicional qué accion debe repetir
+* Causa principalmente movimiento hacia alguna dirección
+
+5. Pared
+* Le impide al protagonista (Hayley) seguir caminando, ya que no se pueden atravesar
+* Algunas de ellas, (como la meta y las opciones del menú), pueden desencadenar reacciones en el juego
+* Juntas, formuan un laberinto para hacer cada nivel
+
+6. Panel
+* Tiene cuatro campos, y en cada uno se puede poner una pestaña condicional
+* Cuenta con botones de pausa y de reseteo, para ayudar al jugador a controlar el curso del juego
+* Ejecuta las condicionales que tenga en sí, una por una y en orden
 
 
 ### Diagrama de clases
