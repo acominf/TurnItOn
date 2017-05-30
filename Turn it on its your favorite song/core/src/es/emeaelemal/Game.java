@@ -24,7 +24,7 @@ public class Game extends ApplicationAdapter {
 	private ArrayList<Accion> acc;
 	private ArrayList<Condicional> k;
 
-	private Pared meta,ins,exit;
+	private Pared meta,ins,exit,creds;
 	private int nivel,estado;
 	private Panel p;
 	private boolean grab[];
@@ -67,7 +67,7 @@ public class Game extends ApplicationAdapter {
 		batch.setProjectionMatrix(lakitu.combined);
 		batch.begin();
 		batch.draw(img,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
-		if(nivel!=10 && nivel!=8)
+		if(nivel!=10 && nivel!=8&& nivel!=20)
 			estado=p.render(batch,k,cond,acc,condusef);
 		dibujarLabels();
 		if(nivel==1) {
@@ -95,7 +95,8 @@ public class Game extends ApplicationAdapter {
 		}
 		else if(nivel==7)
 		{
-				batch.draw(end, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+			nivel=10;
+			createnivel0();
 		}
 		else if(nivel==8)
 		{
@@ -104,6 +105,10 @@ public class Game extends ApplicationAdapter {
 		else if(nivel==10)
 		{
 			rendernivel0();
+		}
+		else if(nivel==20)
+		{
+			rendernivelcreds();
 		}
 
 		batch.end();
@@ -474,15 +479,18 @@ public class Game extends ApplicationAdapter {
 		}
 		meta = new Pared(600,400,64,64,"go.png");
 		ins = new Pared(600,300,64,64,"instrucciones.png");
-		exit= new Pared(600,200,64,64,"exit.png");
+		exit= new Pared(600,100,64,64,"exit.png");
+		creds= new Pared(600,200,64,64,"exit.png");
 		r.add(meta.rect);
 		r.add(ins.rect);
 		r.add(exit.rect);
+		r.add(creds.rect);
 		pars=new ArrayList<Pared>();
 		p1 = new Hayley(10,10,nivel);
 		pars.add(meta);
 		pars.add(ins);
 		pars.add(exit);
+		pars.add(creds);
 		img=new Texture(Gdx.files.internal("Groundmenu.png"));
 		for(Pared p:pars){
 			r.add(p.rect);
@@ -533,12 +541,55 @@ public class Game extends ApplicationAdapter {
 		borderlands();
 	}
 
+	public void createnivelcreds()
+	{
+		pars.clear();
+		r.clear();
+		k.clear();
+		cond.clear();
+		acc.clear();
+		l = new Label[10];
+		l[0]=(new Condicional(0,-600,"while.png",215,181,5));
+		k.add((Condicional) l[0]);
+		l[1]=(new Condicion(15,-530,"wallnext.png",175,45,0,0));
+		cond.add((Condicion) l[1]);
+		l[2]=(new Accion(7,-420,"Rabajo.png",187,49,1,4));
+		acc.add((Accion) l[2]);
+		l[3]=(new Accion(450,-530,"Rarriba.png",187,49,2,2));
+		acc.add((Accion) l[3]);
+		l[4]=(new Accion(450,-410,"Rderecha.png",187,49,3,3));
+		acc.add((Accion) l[4]);
+		l[5]=(new Accion(450,-470,"Rizquierda.png",187,49,4,1));
+		acc.add((Accion) l[5]);
+		l[6]=(new Condicional(220,-410,"while.png",215,181,6));
+		k.add((Condicional) l[6]);
+		l[7]=(new Condicion(15,-480,"wallnext.png",175,45,7,0));
+		cond.add((Condicion) l[7]);
+		l[8]=(new Condicional(220,-600,"while.png",215,181,8));
+		k.add((Condicional) l[8]);
+		l[9]=(new Condicional(440,-600,"while.png",215,181,9));
+		k.add((Condicional) l[9]);
+		for(int i=0;i<l.length;i++) {
+			r.add(l[i].jeje);
+		}
+		meta = new Pared(0,707,64,64,"back.png");
+		r.add(meta.rect);
+		pars=new ArrayList<Pared>();
+		p1 = new Hayley(10,10,nivel);
+		pars.add(meta);
+		img=new Texture(Gdx.files.internal("creditos.png"));
+		for(Pared p:pars){
+			r.add(p.rect);
+		}
+		borderlands();
+	}
+
 	public void rendernivel1()
 	{
 		for(Pared p:pars){
 			p.render(batch);
 		}
-		nivel=p1.render(batch,r,meta,ins,estado,condusef,exit);
+		nivel=p1.render(batch,r,meta,ins,estado,condusef,exit,creds);
 		if(nivel ==2)
 		{
 			createnivel2();
@@ -550,7 +601,7 @@ public class Game extends ApplicationAdapter {
 		for(Pared p:pars){
 			p.render(batch);
 		}
-		nivel=p1.render(batch,r,meta,ins,estado,condusef,exit);
+		nivel=p1.render(batch,r,meta,ins,estado,condusef,exit,creds);
 		if(nivel ==3)
 		{
 			createnivel3();
@@ -562,7 +613,7 @@ public class Game extends ApplicationAdapter {
 		for(Pared p:pars){
 			p.render(batch);
 		}
-		nivel=p1.render(batch,r,meta,ins,estado,condusef,exit);
+		nivel=p1.render(batch,r,meta,ins,estado,condusef,exit,creds);
 		if(nivel ==4)
 		{
 			createnivel4();
@@ -574,7 +625,7 @@ public class Game extends ApplicationAdapter {
 		for(Pared p:pars){
 			p.render(batch);
 		}
-		nivel=p1.render(batch,r,meta,ins,estado,condusef,exit);
+		nivel=p1.render(batch,r,meta,ins,estado,condusef,exit,creds);
 		if(nivel ==5)
 		{
 			createnivel5();
@@ -586,7 +637,7 @@ public class Game extends ApplicationAdapter {
 		for(Pared p:pars){
 			p.render(batch);
 		}
-		nivel=p1.render(batch,r,meta,ins,estado,condusef,exit);
+		nivel=p1.render(batch,r,meta,ins,estado,condusef,exit,creds);
 		if(nivel ==6)
 		{
 			createnivel6();
@@ -598,7 +649,7 @@ public class Game extends ApplicationAdapter {
 		for(Pared p:pars){
 			p.render(batch);
 		}
-		nivel=p1.render(batch,r,meta,ins,estado,condusef,exit);
+		nivel=p1.render(batch,r,meta,ins,estado,condusef,exit,creds);
 	}
 
 	public void borderlands()
@@ -649,7 +700,7 @@ public class Game extends ApplicationAdapter {
 		for(Pared p:pars){
 			p.render(batch);
 		}
-		nivel=p1.render(batch,r,meta,ins,estado,condusef,exit);
+		nivel=p1.render(batch,r,meta,ins,estado,condusef,exit,creds);
 		if(nivel ==11)
 		{
 			nivel=1;
@@ -661,6 +712,11 @@ public class Game extends ApplicationAdapter {
 				createnivelins();
 			}
 			else
+				if(nivel==20)
+				{
+					createnivelcreds();
+				}
+				else
 				if(nivel==15)
 				{
 					System.exit(0);
@@ -671,8 +727,21 @@ public class Game extends ApplicationAdapter {
 		for(Pared p:pars){
 			p.render(batch);
 		}
-		nivel=p1.render(batch,r,meta,ins,estado,condusef,exit);
+		nivel=p1.render(batch,r,meta,ins,estado,condusef,exit,creds);
 		if(nivel ==9)
+		{
+			nivel=10;
+			createnivel0();
+		}
+	}
+
+	public void rendernivelcreds()
+	{
+		for(Pared p:pars){
+			p.render(batch);
+		}
+		nivel=p1.render(batch,r,meta,ins,estado,condusef,exit,creds);
+		if(nivel ==21)
 		{
 			nivel=10;
 			createnivel0();

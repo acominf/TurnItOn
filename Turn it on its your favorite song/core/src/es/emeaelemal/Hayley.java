@@ -40,13 +40,13 @@ public class Hayley {
         this.animaciones();
     }
 
-    public int render(final SpriteBatch b,ArrayList<Rectangle> r,Pared meta,Pared ins,int estado,boolean camind[],Pared exit)
+    public int render(final SpriteBatch b,ArrayList<Rectangle> r,Pared meta,Pared ins,int estado,boolean camind[],Pared exit,Pared creds)
     {
         this.estado=estado;
         this.oldx=this.x;
         this.oldy=this.y;
         moverLados(b);
-        checarColision(r,meta,camind,ins,exit);
+        checarColision(r,meta,camind,ins,exit,creds);
         return nivelactual;
     }
     public void moverDir(final SpriteBatch b,int dir){
@@ -105,7 +105,7 @@ public class Hayley {
         activo=(TextureRegion) animacion[0].getKeyFrame(clock,true);
     }
 
-    public void checarColision(ArrayList<Rectangle> r,Pared meta,boolean camind[],Pared ins,Pared exit)
+    public void checarColision(ArrayList<Rectangle> r,Pared meta,boolean camind[],Pared ins,Pared exit,Pared creds)
     {
         if(this.rect.overlaps(meta.rect))
         {
@@ -121,6 +121,9 @@ public class Hayley {
                 nivelactual = 8;
             } else if (this.rect.overlaps(exit.rect)) {
                 nivelactual = 15;
+            }
+            else if (this.rect.overlaps(creds.rect)) {
+                nivelactual = 20;
             }
         }
         for(Rectangle f:r) {
