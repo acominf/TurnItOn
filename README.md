@@ -37,7 +37,7 @@ En los niveles, tienes que formar un diagrama de bloques, con los bloques ya def
 
 
 ### Diagrama de clases
-![Diagrama de clases](https://github.com/YouKiddingD/Repositorio-prueba/blob/master/imagenes/Turn%20it%20on!.png?raw=true)
+![Diagrama de clases](https://github.com/acominf/TurnItOn/blob/master/Turn%20it%20on!%20(1).png)
 
 ### Autores
 Los autores del proyecto son:
