@@ -2,7 +2,7 @@
 El objetivo del juego ayudar a desarrollar la logica de programación del jugador, por medio de niveles en los que se tiene que llegar a la meta, diseñando algoritmos.
 
 ### Descripción del juego
-En los niveles, tienes que formar un diagrama de bloques, con los bloques ya definidos, com mecánicas similares a las de Scratch.
+En los niveles, tienes que formar un diagrama de bloques, con los bloques ya definidos, con mecánicas similares a las de Scratch. Como jugador, cuentas con una serie de pestañas para cada nivel, algunas condicionales (como el while), otras de condición, y otras de acción También hay un panel que ejecuta tus acciones según lo necesites.
 
 ### Clases principales y sus características
 1. Hayley
