@@ -39,6 +39,9 @@ En los niveles, tienes que formar un diagrama de bloques, con los bloques ya def
 ### Diagrama de clases
 ![Diagrama de clases](https://github.com/acominf/TurnItOn/blob/master/Turn%20it%20on!%20(1).png)
 
+### Gameplay del juego
+https://www.youtube.com/watch?v=u1ji_zKLXVw
+
 ### Autores
 Los autores del proyecto son:
 - José Pablo García Limón (@YoSiSoyBatman)
