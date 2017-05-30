@@ -1,8 +1,0 @@
-package es.emeaelemal;
-
-/**
- * Created by Daniel on 5/16/2017.
- */
-public class Instrucciones {
-
-}

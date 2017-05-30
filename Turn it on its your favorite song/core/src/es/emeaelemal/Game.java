@@ -480,7 +480,7 @@ public class Game extends ApplicationAdapter {
 		meta = new Pared(600,400,64,64,"go.png");
 		ins = new Pared(600,300,64,64,"instrucciones.png");
 		exit= new Pared(600,100,64,64,"exit.png");
-		creds= new Pared(600,200,64,64,"exit.png");
+		creds= new Pared(600,200,64,64,"creds.png");
 		r.add(meta.rect);
 		r.add(ins.rect);
 		r.add(exit.rect);
