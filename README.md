@@ -1,8 +1,8 @@
 ### Objetivo del juego
-El objetivo del juego ayudar a desarrollar la logica de programación del jugador, por medio de minijuegos en los que se tiene que cumplir alguna meta, diseñando algoritmos.
+El objetivo del juego ayudar a desarrollar la logica de programación del jugador, por medio de niveles en los que se tiene que llegar a la meta, diseñando algoritmos.
 
 ### Descripción del juego
-En los minijuegos, tienes que formar un diagrama de bloques, con los bloques ya definidos, com mecánicas similares a las de Scratch.
+En los niveles, tienes que formar un diagrama de bloques, con los bloques ya definidos, com mecánicas similares a las de Scratch.
 
 ### Clases principales y sus características
 1. Monito
