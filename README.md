@@ -55,7 +55,7 @@ En los niveles, tienes que formar un diagrama de bloques, con los bloques ya def
 
 
 ### Diagrama de clases
-![Diagrama de clases](https://github.com/acominf/TurnItOn/blob/master/Turn%20it%20on!%20(1).png)
+![Diagrama de clases](https://raw.githubusercontent.com/acominf/TurnItOn/master/Turn%20it%20on!.png)
 
 ### Gameplay del juego
 <iframe width="560" height="315" src="https://www.youtube.com/embed/u1ji_zKLXVw" frameborder="0" allowfullscreen></iframe>
