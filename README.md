@@ -8,7 +8,8 @@ En los niveles, tienes que formar un diagrama de bloques, con los bloques ya def
 1. Hayley
 * Puede explorar cada nivel, moviéndose deacuerdo a las pestañas
 * Se mueve a una velocidad normal, ya sea a la derecha, a la izquierda, hacia arriba o hacia abajo
-* Es el protagonista del juegp
+* Es el protagonista del juego
+![Imagen de Hayley](https://raw.githubusercontent.com/acominf/TurnItOn/master/Hayley.png)
 
 2. Pestaña condicional
 * Tiene un campo para ponerle una condicion, y un campo para ponerle una accion
