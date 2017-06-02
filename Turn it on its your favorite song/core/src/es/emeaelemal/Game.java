@@ -663,11 +663,11 @@ public class Game extends ApplicationAdapter {
 		int la=64;
 		for(int i=0;i<largo;i++){
 			if(dir==0){
-				pars.add(new Pared(x+i*la,y,la,la,"pared.png"));
+				pars.add(new Pared(x+i*la,y,la,la,"Pared.png"));
 
 			}
 			else{
-				pars.add(new Pared(x,y+i*la,la,la,"pared.png"));
+				pars.add(new Pared(x,y+i*la,la,la,"Pared.png"));
 			}
 		}
 	}

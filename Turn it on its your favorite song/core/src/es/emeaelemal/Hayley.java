@@ -22,7 +22,7 @@ public class Hayley {
     private Texture imagen;
     private TextureRegion activo;
     private int speed;
-    int x,y,oldx,oldy,nivelactual,estado,direccion;
+    private int x,y,oldx,oldy,nivelactual,estado,direccion;
 
 
     public Hayley(int x, int y,int nivel)
